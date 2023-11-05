@@ -8,20 +8,19 @@ function sumZero(array) {
 	if (!array?.length) {
 		return false;
 	}
-	let start = 0;
-	let end = array.length - 1;
 
-	while (start != end) {
-		const first = array[start];
-		const last = array[end];
-		if (first + last === 0) {
+	let left = 0;
+	let right = array.length - 1;
+
+	while (left < right) {
+		const sum = array[left] + array[right];
+
+		if (sum === 0) {
 			return true;
-		}
-
-		if (Math.abs(first) > Math.abs(last)) {
-			start++;
+		} else if (sum > 0) {
+			right--;
 		} else {
-			end--;
+			left++;
 		}
 	}
 
