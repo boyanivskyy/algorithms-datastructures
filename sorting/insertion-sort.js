@@ -1,3 +1,4 @@
+// O(n^2)
 function insertionSort(arr) {
 	let currVal;
 	for (let i = 1; i < arr.length; i++) {

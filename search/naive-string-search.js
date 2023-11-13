@@ -1,3 +1,4 @@
+// O(n)
 /**
  * find how many matches of target in str
  *

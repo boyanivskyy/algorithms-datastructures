@@ -1,3 +1,4 @@
+// O(n^2)
 function selectionSort(arr) {
 	let minIdx = 0;
 

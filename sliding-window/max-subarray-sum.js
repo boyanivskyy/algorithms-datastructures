@@ -1,3 +1,4 @@
+// O(n)
 /**
  * function which returns sum of subarray of given length
  *
