@@ -13,7 +13,6 @@ function sumZero(array) {
 		set.add(val);
 	}
 
-	console.log(set);
 	for (let i = 0; i < array.length; i++) {
 		const val = array[i];
 		if (set.has(val * -1)) {
