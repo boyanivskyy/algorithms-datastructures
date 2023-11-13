@@ -11,10 +11,7 @@ function bubbleSort(arr, asc) {
 		}
 
 		if (noSwaps) {
-			console.log("stopped with noSwaps condition");
 			break;
-		} else {
-			console.log("iteration", i + 1);
 		}
 	}
 
