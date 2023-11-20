@@ -17,6 +17,26 @@ function mostDigits(nums) {
 	return maxDigits;
 }
 
+// O(n)
+function radixSort(arr) {
+	const maxDigitLen = mostDigits(arr);
+
+	for (let k = 0; k < maxDigitLen; k++) {
+		let digitBuckets = Array.from({ length: 10 }, () => []);
+
+		for (let i = 0; i < arr.length; i++) {
+			const bucket = digitBuckets[getDigit(arr[i], k)];
+			bucket.push(arr[i]);
+		}
+
+		arr = [].concat(...digitBuckets);
+	}
+
+	return arr;
+}
+
 console.log(getDigit(123, 1));
 console.log(digitCount(123));
 console.log(mostDigits([123, 3453, 1, 23]));
+
+console.log("radixSort", radixSort([1234, 4, 5, 234, 987, 43123]));
