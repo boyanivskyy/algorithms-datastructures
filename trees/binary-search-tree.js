@@ -67,6 +67,7 @@ class BinarySearchTree {
 	}
 
 	// breadth
+	// is used mostly if tree is more like list(thin)
 	bfs() {
 		const values = [];
 		const queue = [];
@@ -112,6 +113,7 @@ class BinarySearchTree {
 		return values;
 	}
 
+	// is used to get sorted array our of binary tree
 	dfsInOrder() {
 		const values = [];
 		const traverse = (node) => {
