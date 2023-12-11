@@ -17,26 +17,40 @@ class ListNode {
 	}
 }
 
+// INFO: shorter solution but less clear in terms of readability
+// let a = headA, b = headB
+// while (a !== b) {
+//     a = !a ? headB : a.next
+//     b = !b ? headA : b.next
+// }
+// return a
+
 function getIntersectionNode(headA, headB) {
-	const set = new Set();
-	let curr = headA;
-	while (curr !== null) {
-		set.add(curr.val);
-		curr = curr.next;
+	if (headA === null || headB === null) {
+		return null;
 	}
 
-	curr = headB;
-	while (curr !== null) {
-		if (set.has(curr.val)) {
-			return curr;
+	let currA = headA;
+	let currB = headB;
+
+	while (currA !== currB) {
+		currA = currA.next;
+		currB = currB.next;
+
+		if (currA === currB) {
+			return currA;
 		}
 
-		set.add(curr.val);
+		if (currA === null) {
+			currA = currB;
+		}
 
-		curr = curr.next;
+		if (currB === null) {
+			currB = currA;
+		}
 	}
 
-	return null;
+	return currA;
 }
 
 const listA = new ListNode(
