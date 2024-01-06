@@ -87,6 +87,7 @@ class BinarySearchTree {
 		return values;
 	}
 
+	// can be used to export tree, clone it, store in DB
 	dfsPreOrder() {
 		const values = [];
 		const traverse = (node) => {
