@@ -96,9 +96,13 @@ class SinglyLinkedList {
 		while (counter !== idx) {
 			curr = curr.next;
 			counter++;
+
+			if (curr === idx) {
+				return curr;
+			}
 		}
 
-		return curr;
+		return;
 	}
 
 	set(idx, val) {
